@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novella — Библиотека Астана</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(52, 64, 36, 0.75), rgba(76, 61, 25, 0.75)), 
+                              url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            content: ["./**/*.{html,js}"],
+            theme: {
+                extend: {
+                    colors: {
+                        'cafe-noir': '#4C3D19',
+                        'kombu-green': '#354024',
+                        'moss-green': '#889063',
+                        'tan': '#CFBB99',
+                        'bone': '#E5D7C4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bone text-cafe-noir">
+
+    <!-- HEADER -->
+    <header class="bg-kombu-green text-bone sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-book-open text-3xl"></i>
+                <span class="text-3xl font-bold tracking-wide heading-font">Novella</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="hover:text-tan transition-colors">О библиотеке</a>
+                <a href="catalog.html" class="hover:text-tan transition-colors">Каталог</a>
+                <a href="my-bookings.html" class="hover:text-tan transition-colors">Мои бронирования</a>
+                <a href="#" class="hover:text-tan transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button onclick="window.location.href='login.html'" 
+                        class="px-6 py-2.5 text-sm font-medium border border-bone/70 hover:border-bone rounded-full transition">
+                    Войти
+                </button>
+                <button onclick="window.location.href='register.html'" 
+                        class="bg-cafe-noir hover:bg-[#3a2f14] text-bone px-6 py-2.5 text-sm font-medium rounded-full transition">
+                    Регистрация
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-7xl font-bold heading-font leading-tight mb-6">
+                Добро пожаловать в<br>Novella
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto opacity-90">
+                Современная библиотека Астаны с удобной онлайн-бронью книг
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="catalog.html" 
+                   class="bg-tan hover:bg-[#e0c9a8] text-cafe-noir font-semibold px-10 py-4 rounded-3xl text-lg transition transform hover:scale-105">
+                    Перейти в каталог
+                </a>
+                <a href="#" 
+                   class="border-2 border-white/80 hover:bg-white/10 font-semibold px-10 py-4 rounded-3xl text-lg transition">
+                    Узнать больше о нас
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОПУЛЯРНЫЕ КНИГИ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold heading-font text-cafe-noir">Популярные книги</h2>
+                    <p class="text-moss-green mt-2">Самые востребованные издания этой недели</p>
+                </div>
+                <a href="catalog.html" class="text-moss-green hover:text-cafe-noir font-medium flex items-center gap-2">
+                    Все книги <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="popular-books">
+                <!-- Книги будут добавлены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- О БИБЛИОТЕКЕ -->
+    <section class="py-20 bg-tan">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold heading-font text-cafe-noir mb-8">Наша библиотека</h2>
+                    <div class="space-y-6 text-lg">
+                        <p class="text-cafe-noir/80">
+                            Novella — это современное пространство для любителей чтения в Астане. 
+                            Более 1500 книг, уютные читальные залы и удобная система онлайн-бронирования.
+                        </p>
+                        <div class="flex items-center gap-8">
+                            <div>
+                                <div class="text-3xl font-semibold text-moss-green">1500+</div>
+                                <div class="text-sm text-cafe-noir/70">книг в фонде</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-semibold text-moss-green">450+</div>
+                                <div class="text-sm text-cafe-noir/70">читателей в день</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/870/800/600" 
+                         alt="Интерьер библиотеки Novella" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-kombu-green text-bone py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fa-solid fa-book-open text-3xl"></i>
+                        <span class="text-2xl font-bold heading-font">Novella</span>
+                    </div>
+                    <p class="text-bone/70">Современная библиотека с удобным онлайн-бронированием.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Быстрые ссылки</h4>
+                    <ul class="space-y-2 text-bone/70">
+                        <li><a href="#" class="hover:text-tan">Каталог книг</a></li>
+                        <li><a href="my-bookings.html" class="hover:text-tan">Мои бронирования</a></li>
+                        <li><a href="#" class="hover:text-tan">Правила пользования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-2 text-bone/70">
+                        <li>ул. Бокейхана, 42, Астана</li>
+                        <li>+7 (7172) 10-34-56</li>
+                        <li>info@novella.kz</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Следите за нами</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="#" class="hover:text-tan"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-tan"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-bone/20 mt-12 pt-8 text-center text-sm text-bone/60">
+                © 2026 Библиотека Novella.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Пример популярных книг
+        const popularBooks = [
+            { id: 1, title: "Война и мир", author: "Лев Толстой", cover: "https://picsum.photos/id/1015/300/400" },
+            { id: 2, title: "Преступление и наказание", author: "Фёдор Достоевский", cover: "https://picsum.photos/id/201/300/400" },
+            { id: 3, title: "1984", author: "Джордж Оруэлл", cover: "https://picsum.photos/id/237/300/400" },
+            { id: 4, title: "Мастер и Маргарита", author: "Михаил Булгаков", cover: "https://picsum.photos/id/870/300/400" }
+        ];
+
+        function renderPopularBooks() {
+            const container = document.getElementById('popular-books');
+            container.innerHTML = popularBooks.map(book => `
+                <div onclick="goToBook(${book.id})" 
+                     class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
+                    <img src="${book.cover}" alt="${book.title}" 
+                         class="w-full h-80 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg leading-tight line-clamp-2">${book.title}</h3>
+                        <p class="text-moss-green text-sm mt-1">${book.author}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function goToBook(id) {
+            window.location.href = `book-detail.html?id=${id}`;
+        }
+
+        window.onload = () => {
+            renderPopularBooks();
+        };
+    </script>
+</body>
+</html>
